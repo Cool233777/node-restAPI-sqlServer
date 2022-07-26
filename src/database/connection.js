@@ -17,10 +17,9 @@ export async function getConnection() {
     
     try {
         //connect to database
-        const pool = await sql.connect(dbSettings)
         console.log('database connected!')
+        const pool = await sql.connect(dbSettings)
         return pool
-    console.log(result)
     } catch (error) {
         console.error(error)
     }

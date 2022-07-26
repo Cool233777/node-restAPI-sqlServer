@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {getUsers} from '../controllers/users.controller.js'
+import {getUsers, postUser} from '../controllers/users.controller.js'
 
 const router = Router()
 
@@ -13,7 +13,7 @@ router.get('/users', getUsers)
 router.get('/users',)
 
 //CREATE USER
-router.post('/users',)
+router.post('/users', postUser)
 
 //UPDATE USER
 router.put('/users',)
