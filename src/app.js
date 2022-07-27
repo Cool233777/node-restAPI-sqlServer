@@ -1,7 +1,7 @@
 import express from 'express'
 import config from './config.js'
 
-import usersController from './routes/users.js'
+import usersController from './routes/tablesRoutes.js'
 
 const app = express()
 
