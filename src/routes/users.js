@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {getUsers, postUser} from '../controllers/users.controller.js'
+import {getUserById, getUsers, postUser, deleteUserById, updateUserById} from '../controllers/users.controller.js'
 
 const router = Router()
 
@@ -10,16 +10,16 @@ const router = Router()
 router.get('/users', getUsers)
 
 //GET ONE USER
-router.get('/users',)
+router.get('/users/:idUser', getUserById)
 
 //CREATE USER
 router.post('/users', postUser)
 
 //UPDATE USER
-router.put('/users',)
+router.put('/users/:idUser', updateUserById)
 
 //DELETE USER
-router.delete('/users',)
+router.delete('/users/:idUser', deleteUserById)
 
 
 export default router

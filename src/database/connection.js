@@ -12,15 +12,16 @@ const dbSettings = {
     }
 }
 
-
 export async function getConnection() {
     
     try {
         //connect to database
-        console.log('database connected!')
+
         const pool = await sql.connect(dbSettings)
         return pool
     } catch (error) {
         console.error(error)
     }
 }
+console.log('database connected!')
+export {sql};//lo exporto para que otros modulos lo utilicen
