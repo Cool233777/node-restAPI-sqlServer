@@ -1,13 +1,12 @@
 import {Router} from 'express'
-import {
-    getUserById, getUsers, postUser, deleteUserById, updateUserById, 
-} from '../controllers/users.controllers.js'
+import {getUserById, getUsers, postUser, deleteUserById, updateUserById, } from '../controllers/users.controllers.js'
+import {veificarToken} from '../middleware/auth.js'
 
 const router = Router()
 
 //// USERS ENDPOINTS////////////////////////////////////
 //GET ALL
-router.get('/users', getUsers)
+router.get('/users', veificarToken, getUsers)
 
 //GET ONE USER
 router.get('/users/:idUser', getUserById)
