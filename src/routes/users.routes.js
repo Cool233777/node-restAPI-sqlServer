@@ -9,15 +9,15 @@ const router = Router()
 router.get('/users', veificarToken, getUsers)
 
 //GET ONE USER
-router.get('/users/:idUser', getUserById)
+router.get('/users/:idUser', veificarToken, getUserById)
 
 //CREATE USER
-router.post('/users', postUser)
+router.post('/users', veificarToken, postUser)
 
 //UPDATE USER
-router.put('/users/:idUser', updateUserById)
+router.put('/users/:idUser', veificarToken, updateUserById)
 
 //DELETE USER
-router.delete('/users/:idUser', deleteUserById)
+router.delete('/users/:idUser', veificarToken, deleteUserById)
 
 export default router
