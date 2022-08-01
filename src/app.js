@@ -7,6 +7,7 @@ import functionsRoutes from './routes/functions.routes.js'
 import rolesFunctionsRoutes from './routes/rolesFunctions.routes.js'
 import usersRolesRoutes from './routes/usersRoles.routes.js'
 import authRoutes from './routes/token.routes.js'
+import reportesRoutes from './routes/reportes.routes.js'
 
 const app = express()
 
@@ -24,5 +25,6 @@ app.use(functionsRoutes)
 app.use(rolesFunctionsRoutes)
 app.use(usersRolesRoutes)
 app.use(authRoutes)
+app.use(reportesRoutes)
 
 export default app
