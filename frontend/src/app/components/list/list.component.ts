@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import {Router} from '@angular/router'
+import {MatTableDataSource} from '@angular/material/table'
+import { User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-list',
@@ -8,9 +11,36 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private usersService: UsersService) { }
+  users: User[] = [];
+  users2: User[] = [];
+  displayedColumns = ['username', 'firstName', 'lastName', 'status', 'actions'];
+
+  constructor(private usersService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
+    this.fetchUsers();
+  }
+
+  fetchUsers(){
+    this.usersService
+    .getAllUsers()
+    .subscribe((data: any) => {
+      this.users = data[0]
+      //this.users2 = this.users[0]
+      
+      console.log('data requested....')
+      console.log(this.users)
+    });
+  }
+
+  updateUser(id: string){
+    this.router.navigate([`/edit/${id}`]);
+  }
+
+  deleteUser(id: string){
+    this.usersService.deleteUser(id).subscribe(()=> {
+      this.fetchUsers();
+    });
   }
 
 }
