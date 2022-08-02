@@ -1,0 +1,30 @@
+<div>
+    <br>
+    <mat-card>
+        <section class="mat-typography">
+            <h3> Crear Rol</h3>
+        </section>
+        <mat-divider> </mat-divider>
+            <br>
+            
+            <form [formGroup]="createForm" class="create-form">
+                   
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="Name" formControlName="name" #name>
+                </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="Description" formControlName="description" #description>
+                </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="status" formControlName="status" #status>
+                </mat-form-field> 
+                <mat-divider></mat-divider>
+                <br><br>
+                <button mat-raised-button color="danger" routerLink="/roles/list">Regresar</button>&nbsp;
+                <button type="submit" (click)="createRol(name.value, description.value, status.value)" mat-raised-button color="primary">
+                Guardar
+                </button>
+            </form>
+       
+    </mat-card>
+</div>

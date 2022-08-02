@@ -19,12 +19,12 @@ export class RolesService {
   }
 
   createRol(name: string, description: string, status: string){
-    const User = {
+    const Rol = {
       name: name,
       description: description,
       status: status
     };
-    return this.http.post(`${this.url}/roles`, User)
+    return this.http.post(`${this.url}/roles`, Rol)
   }
 
   updateRol(idRol: string, name: string, description: string, status: string){
