@@ -28,12 +28,12 @@ export class RolesService {
   }
 
   updateRol(idRol: string, name: string, description: string, status: string){
-    const User = {
+    const Rol = {
       name: name,
       description: description,
       status: status
     };
-    return this.http.put(`${this.url}/roles/${idRol}`, User)
+    return this.http.put(`${this.url}/roles/${idRol}`, Rol)
   }
 
   deleteRol(idRol: any){

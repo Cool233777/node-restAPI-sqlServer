@@ -1,20 +1,25 @@
 <div>
     <br>
     <mat-card>
-        <button mat-raised-button color="primary" routerLink="/functions/create"> Crear Funcion</button>
+        <button mat-raised-button color="primary" routerLink="/rolesfunctions/create"> Crear rol-function</button>
         <br><br>
         <mat-divider></mat-divider>
         <br>
-        <table mat-table [dataSource]="functions" class="table">
+        <table mat-table [dataSource]="rolesFunctions" class="table">
 
-            <ng-container matColumnDef="name" >
-                <th mat-header-cell *matHeaderCellDef> Nmae</th>
-                <td mat-cell *matCellDef="let element; let i = index;"> {{element.name}}</td>
+            <ng-container matColumnDef="idRolFunction" >
+                <th mat-header-cell *matHeaderCellDef> IdRolFunction</th>
+                <td mat-cell *matCellDef="let element; let i = index;"> {{element.idRolFunction}}</td>
             </ng-container>
 
-            <ng-container matColumnDef="description">
-                <th mat-header-cell *matHeaderCellDef> Description</th>
-                <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+            <ng-container matColumnDef="idRol" >
+                <th mat-header-cell *matHeaderCellDef> IdRol</th>
+                <td mat-cell *matCellDef="let element; let i = index;"> {{element.idRol}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="idFunction">
+                <th mat-header-cell *matHeaderCellDef> IdFunction</th>
+                <td mat-cell *matCellDef="let element"> {{element.idFunction}}</td>
             </ng-container>
 
             <ng-container matColumnDef="date_created">
@@ -35,8 +40,8 @@
             <ng-container matColumnDef="actions" class="mat-column-right">
                 <th mat-header-cell *matHeaderCellDef> Actions</th>
                 <td mat-cell *matCellDef="let element">
-                     <button mat-button color="primary" (click)="updateFunction(element.idFunction)"> Edit</button>
-                     <button mat-button color="warning" (click)="deleteFunction(element.idFunction)"> Delete</button>
+                    <button mat-button color="primary" (click)="updateRolFunction(element.idRolFunction)"> Edit</button>
+                    <button mat-button color="warning" (click)="deleteRolFunction(element.idRolFunction)"> Delete</button>
                 </td>
             </ng-container>
 

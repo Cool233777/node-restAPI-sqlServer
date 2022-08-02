@@ -86,7 +86,7 @@ export const getRolesFunctions = async (req, res) => {
          .input('idRol', sql.Int, idRol)
          .input('idFunction', sql.Int, idFunction)
          .input('status', sql.Int, status)
-         .input('idRolFunction', sql.Int, status)
+         .input('idRolFunction', sql.Int, idRolFunction)
          .query('UPDATE ROLES_FUNCTIONS SET [idRol] = @idRol, [idFunction] = @idFunction, [date_update] = GETDATE(), [status] = @status where ROLES_FUNCTIONS.idRolFunction = @idRolFunction')
          res.json({msg: "rol_funcion actualizada exitosamente"})
      } catch (error) {

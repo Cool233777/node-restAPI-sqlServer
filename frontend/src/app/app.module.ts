@@ -38,8 +38,15 @@ import { ListFunctionComponent } from './components/list-function/list-function.
 import { EditFunctionComponent } from './components/edit-function/edit-function.component';
 import { CreateFunctionComponent } from './components/create-function/create-function.component';
 
+import { CreateRolesFunctionsComponent } from './components/create-roles-functions/create-roles-functions.component';
+import { EditRolesFunctionsComponent } from './components/edit-roles-functions/edit-roles-functions.component';
+import { ListRolesFunctionsComponent } from './components/list-roles-functions/list-roles-functions.component';
+
 
 const routes: Routes = [
+  {path: 'rolesfunctions/create', component: CreateRolesFunctionsComponent},
+  {path: 'rolesfunctions/edit/:idRolFunction', component: EditRolesFunctionsComponent},
+  {path: 'rolesfunctions/list', component: ListRolesFunctionsComponent},
   {path: 'functions/create', component: CreateFunctionComponent},
   {path: 'functions/edit/:idFunction', component: EditFunctionComponent},
   {path: 'functions/list', component: ListFunctionComponent},
@@ -66,6 +73,9 @@ const routes: Routes = [
     ListFunctionComponent,
     EditFunctionComponent,
     CreateFunctionComponent,
+    CreateRolesFunctionsComponent,
+    EditRolesFunctionsComponent,
+    ListRolesFunctionsComponent,
   ],
   imports: [
     BrowserModule,
