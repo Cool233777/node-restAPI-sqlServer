@@ -18,6 +18,13 @@ app.set('port', config.port)
 app.use(express.json());//para recibir en formato json
 app.use(express.urlencoded({extended: false}))//recibir desde el html
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 //llamado al controllador de las tablas
 app.use(usersRoutes)
 app.use(rolesRoutes)

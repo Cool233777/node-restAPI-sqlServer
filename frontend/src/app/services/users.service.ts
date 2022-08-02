@@ -14,8 +14,8 @@ export class UsersService {
     return this.http.get(`${this.url}/users`);
   }
 
-  getUserById() {
-    return this.http.get(`${this.url}/users/:id`);
+  getUserById(idUser: any) {
+    return this.http.get(`${this.url}/users/${idUser}`);
   }
 
   createUser(username: string, firstName: string, lastName: string, status: string){
@@ -25,21 +25,21 @@ export class UsersService {
       lastName: lastName,
       status: status
     };
-    return this.http.post(`${this.url}/usesrs`, User)
+    return this.http.post(`${this.url}/users`, User)
   }
 
-  updateUser(id: string, username: string, firstName: string, lastName: string, status: string){
+  updateUser(idUser: string, username: string, firstName: string, lastName: string, status: string){
     const User = {
       username: username,
       firstName: firstName,
       lastName: lastName,
       status: status
     };
-    return this.http.post(`${this.url}/usesrs/${id}`, User)
+    return this.http.put(`${this.url}/users/${idUser}`, User)
   }
 
-  deleteUser(id: string){
-    return this.http.delete(`${this.url}/usesrs/${id}`)
+  deleteUser(idUser: any){
+    return this.http.delete(`${this.url}/users/${idUser}`)
   }
 
 }

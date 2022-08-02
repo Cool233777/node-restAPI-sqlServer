@@ -26,8 +26,6 @@ export class ListComponent implements OnInit {
     .getAllUsers()
     .subscribe((data: any) => {
       this.users = data[0]
-      //this.users2 = this.users[0]
-      
       console.log('data requested....')
       console.log(this.users)
     });
@@ -37,8 +35,9 @@ export class ListComponent implements OnInit {
     this.router.navigate([`/edit/${id}`]);
   }
 
-  deleteUser(id: string){
-    this.usersService.deleteUser(id).subscribe(()=> {
+  deleteUser(idUser: any){
+    console.log(idUser)
+    this.usersService.deleteUser(idUser).subscribe(()=> {
       this.fetchUsers();
     });
   }

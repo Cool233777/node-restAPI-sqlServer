@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms'
+import { Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-create',
@@ -8,9 +10,26 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class CreateComponent implements OnInit {
 
-  constructor(private usersService: UsersService) { }
+  createForm!: FormGroup;
+
+  constructor(private usersService: UsersService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) { 
+      this.createForm = this.fb.group({
+        username: ['', Validators.required],
+        firstName: '',
+        lastName: '',
+        status: ''
+      })
+    
+  }
+
+  createUser(username: any, firstName: any, lastName: any, status: any){
+    this.usersService.createUser(username, firstName, lastName, status).subscribe(()=>{
+      this.router.navigate(['/list'])
+    });
+  }
 
   ngOnInit(): void {
+
   }
 
 }

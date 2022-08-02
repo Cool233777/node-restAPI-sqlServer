@@ -1,1 +1,33 @@
-<p>create works!</p>
+<div>
+    <br>
+    <mat-card>
+        <section class="mat-typography">
+            <h3> Crear Usuario</h3>
+        </section>
+        <mat-divider> </mat-divider>
+            <br>
+            
+            <form [formGroup]="createForm" class="create-form">
+                   
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="Username" formControlName="username" #username>
+                </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="firstName" formControlName="firstName" #firstName>
+                </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="lastName" formControlName="lastName" #lastName>
+                </mat-form-field>
+                <mat-form-field class="field-full-width">
+                    <input matInput placeholder="status" formControlName="status" #status>
+                </mat-form-field> 
+                <mat-divider></mat-divider>
+                <br><br>
+                <button mat-raised-button color="danger" routerLink="/list">Regresar</button>&nbsp;
+                <button type="submit" (click)="createUser(username.value, firstName.value, lastName.value, status.value)" mat-raised-button color="primary">
+                Guardar
+                </button>
+            </form>
+       
+    </mat-card>
+</div>
