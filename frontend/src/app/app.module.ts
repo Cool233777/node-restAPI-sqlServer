@@ -42,20 +42,32 @@ import { CreateRolesFunctionsComponent } from './components/create-roles-functio
 import { EditRolesFunctionsComponent } from './components/edit-roles-functions/edit-roles-functions.component';
 import { ListRolesFunctionsComponent } from './components/list-roles-functions/list-roles-functions.component';
 
+import { EditUserRolesComponent } from './components/edit-user-roles/edit-user-roles.component';
+import { ListUserRolesComponent } from './components/list-user-roles/list-user-roles.component';
+import { CreateUserRolesComponent } from './components/create-user-roles/create-user-roles.component';
+
 
 const routes: Routes = [
+  {path: 'usersroles/create', component: CreateUserRolesComponent},
+  {path: 'usersroles/edit/:idUserRol', component: EditUserRolesComponent},
+  {path: 'usersroles/list', component: ListUserRolesComponent},
+
   {path: 'rolesfunctions/create', component: CreateRolesFunctionsComponent},
   {path: 'rolesfunctions/edit/:idRolFunction', component: EditRolesFunctionsComponent},
   {path: 'rolesfunctions/list', component: ListRolesFunctionsComponent},
+
   {path: 'functions/create', component: CreateFunctionComponent},
   {path: 'functions/edit/:idFunction', component: EditFunctionComponent},
   {path: 'functions/list', component: ListFunctionComponent},
+
   {path: 'roles/create', component: CreateRolComponent},
   {path: 'roles/edit/:idRol', component: EditRolComponent},
   {path: 'roles/list', component: ListRolComponent},
+
   {path: 'users/create', component: CreateUserComponent},
   {path: 'users/edit/:idUser', component: EditUserComponent},
   {path: 'users/list', component: ListUserComponent},
+  
   {path: 'menu', component: MenuComponent},
   {path: '', redirectTo: 'menu', pathMatch: 'full'},
 ];
@@ -76,6 +88,9 @@ const routes: Routes = [
     CreateRolesFunctionsComponent,
     EditRolesFunctionsComponent,
     ListRolesFunctionsComponent,
+    EditUserRolesComponent,
+    ListUserRolesComponent,
+    CreateUserRolesComponent,
   ],
   imports: [
     BrowserModule,
