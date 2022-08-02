@@ -9,7 +9,7 @@ import { User } from 'src/app/interfaces/User';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListUserComponent implements OnInit {
 
   users: User[] = [];
   users2: User[] = [];

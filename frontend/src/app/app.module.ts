@@ -19,25 +19,28 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './components/list/list.component';
-import { CreateComponent } from './components/create/create.component';
-import { EditComponent } from './components/edit/edit.component';
+import { ListUserComponent } from './components/list-user/list.component';
+import { CreateUserComponent } from './components/create-user/create.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component'; 
 
 import {UsersService} from './services/users.service';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
-  {path: 'create', component: CreateComponent},
-  {path: 'edit/:idUser', component: EditComponent},
-  {path: 'list', component: ListComponent},
-  {path: '', redirectTo: 'list', pathMatch: 'full'},
+  {path: 'users/create', component: CreateUserComponent},
+  {path: 'users/edit/:idUser', component: EditUserComponent},
+  {path: 'users/list', component: ListUserComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: '', redirectTo: 'menu', pathMatch: 'full'},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
-    CreateComponent,
-    EditComponent,
+    ListUserComponent,
+    CreateUserComponent,
+    EditUserComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

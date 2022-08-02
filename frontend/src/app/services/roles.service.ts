@@ -10,35 +10,33 @@ export class RolesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsers() {
-    return this.http.get(`${this.url}/users`);
+  getAllRoles() {
+    return this.http.get(`${this.url}/roles`);
   }
 
-  getUserById(idUser: any) {
-    return this.http.get(`${this.url}/users/${idUser}`);
+  getRolById(idRol: any) {
+    return this.http.get(`${this.url}/roles/${idRol}`);
   }
 
-  createUser(username: string, firstName: string, lastName: string, status: string){
+  createRol(name: string, description: string, status: string){
     const User = {
-      username: username,
-      firstName: firstName,
-      lastName: lastName,
+      name: name,
+      description: description,
       status: status
     };
-    return this.http.post(`${this.url}/users`, User)
+    return this.http.post(`${this.url}/roles`, User)
   }
 
-  updateUser(idUser: string, username: string, firstName: string, lastName: string, status: string){
+  updateRol(idRol: string, name: string, description: string, status: string){
     const User = {
-      username: username,
-      firstName: firstName,
-      lastName: lastName,
+      name: name,
+      description: description,
       status: status
     };
-    return this.http.put(`${this.url}/users/${idUser}`, User)
+    return this.http.put(`${this.url}/roles/${idRol}`, User)
   }
 
-  deleteUser(idUser: any){
-    return this.http.delete(`${this.url}/users/${idUser}`)
+  deleteRol(idRol: any){
+    return this.http.delete(`${this.url}/roles/${idRol}`)
   }
 }

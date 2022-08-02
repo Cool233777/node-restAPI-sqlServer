@@ -9,10 +9,10 @@ import { User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditUserComponent implements OnInit {
 
   id: string = '';
   user: any = {};

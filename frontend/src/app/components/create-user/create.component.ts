@@ -8,7 +8,7 @@ import { Router, ActivatedRoute} from '@angular/router'
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateUserComponent implements OnInit {
 
   createForm!: FormGroup;
 
