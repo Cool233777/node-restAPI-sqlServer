@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
 
   users: User[] = [];
   users2: User[] = [];
-  displayedColumns = ['username', 'firstName', 'lastName', 'status', 'actions'];
+  displayedColumns = ['username', 'firstName', 'lastName', 'date_created', 'date_update' , 'status', 'actions'];
 
   constructor(private usersService: UsersService, private router: Router) { }
 

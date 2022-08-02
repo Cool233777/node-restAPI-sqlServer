@@ -54,7 +54,8 @@ const routes: Routes = [
     MatSnackBarModule,
     MatCardModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
